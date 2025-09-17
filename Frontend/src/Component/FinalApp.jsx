@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { ProductProvider } from './Context';
+import { MovieProvider } from './Context';
 import Navbar from './NavBar';
 import Home from './Home';
 import ProductDetail from './ProductDetail';
@@ -8,7 +8,7 @@ import AddProduct from './AddProduct';
 function App() {
   return (
     <Router>
-      <ProductProvider>
+      <MovieProvider>
         <Navbar />
         <Routes>
           <Route path="/home" element={<Home />} />
@@ -16,7 +16,7 @@ function App() {
           <Route path="/add-product" element={<AddProduct />} />
           <Route path="*" element={<Navigate to="/home" replace />} />
         </Routes>
-      </ProductProvider>
+      </MovieProvider>
     </Router>
   );
 }
